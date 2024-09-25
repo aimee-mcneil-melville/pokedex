@@ -28,6 +28,15 @@ Id: {pokemon.id}
 Height: {pokemon.height}
 Weight: {pokemon.weight}
 </div>
+
+<ul>
+        {pokemon.types.map((type) => (
+          <li key={type.slot}>
+ <p>Type: {type.type.name}</p>
+</li>
+        ))}
+      </ul>
+
     </>
   )
   }
