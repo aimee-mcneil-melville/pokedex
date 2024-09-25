@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { fetchPokemonList } from "../apiClient"
+import PokemonCard from "./PokemonCard"
 
 export default function App(){
 
@@ -14,13 +15,12 @@ export default function App(){
   if (isLoading) return <p>Loading...</p>
 
   if (data) {
-
   return (
     <>
 <div>
 <h1>Pokémon List</h1>
 {data.map((pokemon) => (
-  <li key={pokemon.id}>{pokemon.name}</li>
+  <PokemonCard key={pokemon.name} name={pokemon.name}></PokemonCard>
 ))}
 </div>
     </>
