@@ -24,17 +24,17 @@ export default function PokemonCard(props:props){
 
   return (
   <>
-    <div className="bg-yellow-100 border-2 border-green-300 px-8 py-4 rounded-lg shadow-lg transition-transform transform hover:border-pink-300">
-      <button onClick={() => onClick(pokemon)} >
-        <h2 className="text-2xl font-bold text-green-600">{pokemon.name}</h2>
+    <div className="bg-yellow-100 border-2 border-green-300 rounded-lg shadow-lg hover:border-pink-300">
+      <button className="w-full " onClick={() => onClick(pokemon)} >
+        <h2 className="text-2xl font-bold text-green-600 ">{pokemon.name}</h2>
           <div className="flex justify-between">
-            <div className="text-gray-600">
+            <div className="text-gray-600 p-4">
               <p>Id: {pokemon.id}</p>
               <p>Height: {pokemon.height}</p>
               <p>Weight: {pokemon.weight}</p>
             </div>
-            <div className="">
-              <p className="font-semibold text-pink-400 text-xl">Types:</p>
+            <div className="text-gray-600 p-4">
+              <p className="font-semibold text-pink-400 text-l">Types:</p>
                 <ul className="list-none text-gray-600">
                   {pokemon.types.map((type) => (
                     <li key={type.slot}>
