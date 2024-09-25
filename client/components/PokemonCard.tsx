@@ -3,10 +3,11 @@ import { fetchPokemon } from "../apiClient"
 
 interface props {
   name: string
+  onClick: () => void
 }
 
 export default function PokemonCard(props:props){
-  const {name} = props
+  const {name, onClick} = props
 
   const {
     data: pokemon,
@@ -21,32 +22,30 @@ export default function PokemonCard(props:props){
   if (pokemon) {
 
   return (
-    <>
- <div className="bg-yellow-100 border-2 border-green-300 px-8 py-4 rounded-lg shadow-lg transition-transform transform hover:border-pink-300">
-    <h2 className="text-2xl font-bold text-green-600">{pokemon.name}</h2>
-
-
-    <div className="flex justify-between">
-        <div className="text-gray-600">
-          <p>Id: {pokemon.id}</p>
-          <p>Height: {pokemon.height}</p>
-          <p>Weight: {pokemon.weight}</p>
-        </div>
-
-        <div className="">
-          <p className="font-semibold text-pink-400 text-xl">Types:</p>
-          <ul className="list-none text-gray-600">
-            {pokemon.types.map((type) => (
-              <li key={type.slot}>
-                {type.type.name}
-              </li>
-            ))}
-          </ul>
+  <>
+    <div className="bg-yellow-100 border-2 border-green-300 px-8 py-4 rounded-lg shadow-lg transition-transform transform hover:border-pink-300">
+      <button onClick={onClick} >
+        <h2 className="text-2xl font-bold text-green-600">{pokemon.name}</h2>
+          <div className="flex justify-between">
+            <div className="text-gray-600">
+              <p>Id: {pokemon.id}</p>
+              <p>Height: {pokemon.height}</p>
+              <p>Weight: {pokemon.weight}</p>
+            </div>
+            <div className="">
+              <p className="font-semibold text-pink-400 text-xl">Types:</p>
+                <ul className="list-none text-gray-600">
+                  {pokemon.types.map((type) => (
+                    <li key={type.slot}>
+                      {type.type.name}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </button>
       </div>
-      </div>
-      </div>
-
     </>
-  )
+    )
   }
 }
