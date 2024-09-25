@@ -3,12 +3,15 @@ import { fetchPokemonList } from "../apiClient"
 import PokemonCard from "./PokemonCard"
 import { useState } from "react"
 import PokemonDetail from "./PokemonDetail"
+import { Pokemon } from "../../models/pokemon"
 
 export default function App(){
 
-  const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
+  const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null)
 
-  const handlePokemonClick = (pokemon: string) => {
+  const handlePokemonClick = (pokemon:Pokemon) => {
+    console.log(pokemon);
+    
     setSelectedPokemon(pokemon)
   }
 
@@ -31,13 +34,13 @@ export default function App(){
           <div className="w-1/3 p-4">
             <div className="space-y-4">
               {data.map((pokemon) => (
-                <PokemonCard key={pokemon.name} name={pokemon.name} onClick={() => handlePokemonClick(pokemon.name)}></PokemonCard>
+                <PokemonCard key={pokemon.name} name={pokemon.name} onClick={handlePokemonClick}></PokemonCard>
               ))}
             </div>
           </div>
           <div className="w-2/3 p-4 border-l border-gray-300 fixed right-0 top-0 h-full overflow-y-auto">
             {selectedPokemon ? (
-              <PokemonDetail/>
+              <PokemonDetail pokemon={selectedPokemon}/>
               ) : (
               <p>Select a Pokémon for more information</p>
             )}

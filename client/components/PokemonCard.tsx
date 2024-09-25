@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
 import { fetchPokemon } from "../apiClient"
+import { Pokemon } from "../../models/pokemon";
 
 interface props {
   name: string
-  onClick: () => void
+  onClick: (pokemon: Pokemon) => void;
 }
 
 export default function PokemonCard(props:props){
@@ -24,7 +25,7 @@ export default function PokemonCard(props:props){
   return (
   <>
     <div className="bg-yellow-100 border-2 border-green-300 px-8 py-4 rounded-lg shadow-lg transition-transform transform hover:border-pink-300">
-      <button onClick={onClick} >
+      <button onClick={() => onClick(pokemon)} >
         <h2 className="text-2xl font-bold text-green-600">{pokemon.name}</h2>
           <div className="flex justify-between">
             <div className="text-gray-600">
