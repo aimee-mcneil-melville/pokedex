@@ -1,26 +1,47 @@
-# Boilerplate: React with Express, Vite and Tailwind
+# Pokedex Application
 
-This is a starter project that uses Vite to bundle a React app and Express to serve it in production. Express is used in development to serve an API server. Tailwind is installed for styling.
+This Pokedex has been created for a user to view the original generation of Pokémon. Data is fetched from the PokéAPI, and displayed in a way that a user can view some information about all Pokémon in this generation, and select any Pokémon for further details.
 
-Vite React App: [http://localhost:5173](http://localhost:5173)
-Express API Server: [http://localhost:3000](http://localhost:3000)
+Upon selecting one of these Pokémon from the left-hand side, further information about the Pokémon will display on the right-hand side. 
 
-Requests to `http://localhost:5173/api` are proxied to `http://localhost:3000/api`.
+##Technologies Used
+-Typescript
+- React for Query and State
+- Tailwind
 
-## Setup
+I used a RESTful API for this challenge
+PokéAPI resources: [https://pokeapi.co/docs/v2]
 
-- Use this template to create a new repo.
-- Rename your repo according to the app you're building
 
 ### Installation
 
-Clone the new repo to your local machine
-
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && npm i
+Clone the repo to your local machine with the SSH Key
+```
+git clone https://github.com/[your-account]/pokedex.git
 ```
 
-To start the development server with a watcher that rebuilds your code, run `npm run dev`.
+Navigate to the project
+```
+cd pokedex
+```
 
----
+Install npm packages
+```
+npm instal
+```
+
+Run the application
+```
+npm run dev
+```
+
+Open in the browser
+```
+http://localhost:5173 or check the terminl for your specifiac port
+```
+
+Select a Pokémon 
+
+
+
+Enjoy!
